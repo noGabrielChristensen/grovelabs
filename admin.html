@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grove Admin Wall</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Admin Wall</h1>
+    
+    <button onclick="alert('Stream feature coming soon')">Live Stream</button>
+    <button onclick="alert('News editing coming soon')">Edit News</button>
+    <button onclick="alert('Profile management coming soon')">Manage Profiles</button>
+    <button onclick="logout()">Logout</button>
+
+    <script>
+        const role = localStorage.getItem("userRole");
+        if(role !== "admin") {
+            alert("Access Denied");
+            window.location.href = "index.html";
+        }
+
+        function logout() {
+            localStorage.removeItem("userRole");
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
