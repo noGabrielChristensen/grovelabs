@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #eee;
+  display: flex;
+}
+
+#sidebar {
+  width: 60px;
+  background: #000;
+  color: #ff6600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  transition: width 0.3s;
+}
+#sidebar:not(.collapsed) { width: 200px; }
+
+.sidebar-icon {
+  font-size: 1.5rem;
+  padding: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.sidebar-icon:hover { background: #222; }
+
+#main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+h1, h2 { color: #ff6600; }
+
+.post {
+  background: #222;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+.actions {
+  font-size: 0.9rem;
+  color: #aaa;
+  cursor: pointer;
+}
+.profile {
+  background: #181818;
+  padding: 1rem;
+  border: 1px solid #333;
+  border-radius: 8px;
+}
+.profile-preview {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px dashed #555;
+  border-radius: 8px;
+}
