@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grove Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Your Profile</h1>
+    <div>
+        <img id="profilePic" src="" alt="Profile Picture" width="150">
+        <input type="file" onchange="updateProfilePicture('profileInput','profilePic')" id="profileInput">
+    </div>
+    <div>
+        <img id="coverPhoto" src="" alt="Cover Photo" width="300">
+        <input type="file" onchange="updateCoverPhoto('coverInput','coverPhoto')" id="coverInput">
+    </div>
+    <button onclick="window.location.href='home.html'">Back Home</button>
+    <script src="profile.js"></script>
+</body>
+</html>
