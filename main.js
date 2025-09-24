@@ -1,37 +1,21 @@
-// Handle registration (demo only, no backend yet)
-document.addEventListener("DOMContentLoaded", () => {
-  const registerForm = document.getElementById("registerForm");
-  const adminButton = document.getElementById("adminButton");
-  const adminsWall = document.getElementById("adminsWall");
+const ADMIN_PASSWORD = "GroveFire";
 
-  if (registerForm) {
-    registerForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      alert("Registration complete. (Demo only)");
-      window.location.href = "newsfeed.html";
-    });
-  }
-
-  // Hidden Admin login
-  if (adminButton) {
-    adminButton.addEventListener("click", () => {
-      const password = prompt("Enter Admin Password:");
-      if (password === "ES@261001117") {
-        alert("Access Granted.");
-        localStorage.setItem("isAdmin", "true");
-        window.location.href = "newsfeed.html";
-      } else {
-        alert("Incorrect Password.");
-        localStorage.removeItem("isAdmin");
-        window.location.reload(); // refreshes page
-      }
-    });
-  }
-
-  // Show Admin’s Wall only if logged in as Admin
-  if (adminsWall) {
-    if (localStorage.getItem("isAdmin") === "true") {
-      adminsWall.classList.remove("admin-hidden");
+document.getElementById("adminBtn").addEventListener("click", () => {
+    let pass = prompt("Enter Admin Password:");
+    if(pass === ADMIN_PASSWORD) {
+        localStorage.setItem("userRole", "admin");
+        window.location.href = "home.html";
+    } else {
+        alert("Incorrect password");
     }
-  }
+});
+
+document.getElementById("memberBtn").addEventListener("click", () => {
+    localStorage.setItem("userRole", "member");
+    window.location.href = "home.html";
+});
+
+document.getElementById("guestBtn").addEventListener("click", () => {
+    localStorage.setItem("userRole", "guest");
+    window.location.href = "home.html";
 });
